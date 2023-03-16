@@ -6,7 +6,7 @@ const cors = require('cors')
 const port = 5000;
 
 app.use(express.json());
-app.use(cors('https://menstruaction-b5dd1.web.app/'));
+app.use(cors('https://backend-menstruaction-production.up.railway.app/'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/', (req, res) => {
