@@ -1,10 +1,23 @@
-var express = require("express");
-var app = express();
+const express = require('express')
+const app = express();
 
-app.listen(3000, () => {
- console.log("Server running on port 3000");
-});
 
-app.get('/', (req,res) => {
-  res.status(200).json("already running");
+const port = process.env.PORT || 5002
+
+
+// addData()
+// app.use(cors())
+
+//middleware
+app.use(express.json())
+// app.disable('view cache');
+
+//router 
+app.get("/", (req,res)=>{
+    res.send( 'hw' );
+})
+
+
+app.listen(port, ()=>{
+    console.log('server started');
 })
