@@ -17,7 +17,7 @@ app.get("/", (req,res)=>{
     res.status(200).json('already gettin');
 });
 
-app.post('/', (req, res) => {
+app.post('/api', (req, res) => {
     const midtransClient = require('midtrans-client');
     const SERVER_KEY = 'SB-Mid-server-uOc21Fq7lkWdBObS_PkRiWSj';
 
@@ -33,7 +33,7 @@ let snap = new midtransClient.Snap({
         // transaction token
         res.status(200).json(transaction);
     }).catch(e => {
-        res.status(400).json(e.message);
+        res.status(400).json(e);
     });
 });
 
