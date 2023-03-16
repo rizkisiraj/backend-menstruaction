@@ -29,6 +29,10 @@ let snap = new midtransClient.Snap({
     });
 });
 
+app.get('/', (req,res) => {
+  res.status(200).json('already showing');
+});
+
 app.listen(port, () => {
     console.log('Express is Running')
 })
