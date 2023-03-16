@@ -12,9 +12,9 @@ const port = process.env.PORT || 5002
 app.use(express.json())
 // app.disable('view cache');
 
-//router 
+//router
 app.get("/", (req,res)=>{
-    res.send( 'hw' );
+    res.status(200).json('already gettin');
 })
 
 
