@@ -3,10 +3,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const cors = require('cors')
-const port = 5000;
 
 app.use(express.json());
-app.use(cors('https://backend-menstruaction-production.up.railway.app/'));
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/', (req, res) => {
@@ -32,7 +31,3 @@ let snap = new midtransClient.Snap({
 app.get('/', (req,res) => {
   res.status(200).json('already showing');
 });
-
-app.listen(port, () => {
-    console.log('Express is Running')
-})
